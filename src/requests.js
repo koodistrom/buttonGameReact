@@ -75,14 +75,11 @@ export async function fetchSessionInfo() {
  *  name, points, win, and the clicks to next winning state
  */
 export async function fetchPlay() {
-    let result = await fetch("https://jm-button-game-server.herokuapp.com/play", {
+    let result = await axios("https://jm-button-game-server.herokuapp.com/play", {
       method: "post",
       withCredentials: true,
-      credentials: "include"
+
     })
-      .then(response => {
-        return response.json();
-      })
       .then(playerInfoJson => {
         return playerInfoJson;
       });
