@@ -58,14 +58,10 @@ export async function fetchSetName(name) {
  */
 export async function fetchSessionInfo() {
 
-    let result = await fetch("https://jm-button-game-server.herokuapp.com/current-session", {
+    let result = await axios("https://jm-button-game-server.herokuapp.com/current-session", {
       method: "get",
-      withCredentials: true,
-      credentials: "include"
+      withCredentials: true
     })
-      .then(response => {
-        return response.json();
-      })
       .then(playerInfoJson => {
         return playerInfoJson;
       });
