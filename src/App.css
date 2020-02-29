@@ -1,0 +1,142 @@
+/*TODO: responsiveness */
+#soft-up{
+  display: block;
+  border-radius: 30px ;
+  outline: 0;
+  font-weight: 600;
+  text-align: center;
+  border: 0;
+  background-color: transparent;
+  color: #b9c2ce; 
+  box-shadow:   9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5);
+}
+
+#soft-down{
+  
+  border-radius: 30px ;
+  outline: 0;
+  font-weight: 600;
+  
+  text-align: center;
+  border: 0;
+  
+  width: 100%;
+  height: 100%;
+
+  background-color: transparent;
+  color: #b9c2ce;
+      
+  box-shadow:   9px 9px 16px rgba(0, 0, 0, 0), -9px -9px 16px rgba(247, 251, 255, 0),
+   9px 9px 16px rgba(0, 0, 0, 0.1) inset, -9px -9px 16px rgba(247, 251, 255, 0.7) inset;
+
+}
+
+
+.App {
+
+  
+  text-align: center;
+  min-height: 75vh;
+  display: grid;
+  margin: 2% 10% 5% 10%;
+  padding: 2%;
+  box-shadow:   9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5);
+  border-radius: 30px;
+  grid-template-rows: 40mm 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  font-size: 10mm;
+  grid-template-areas: 
+  "header header t banner"
+  "game game hs-button banner"
+  "game game game-button banner"
+  "game game none banner"
+  
+}
+
+
+.HS-button{
+  grid-area: hs-button;
+  margin: 5mm;
+ 
+}
+
+.Game-button{
+  grid-area: game-button;
+  margin: 5mm;
+  
+}
+
+.Game{
+  grid-area: game;
+  
+  display: grid;
+
+  
+  grid-template-rows: subgrid;
+  grid-template-columns: subgrid;
+  grid-template-areas: 
+  "points next"
+  "points next"
+  "play empty"
+ 
+
+}
+
+.HS-table{
+  
+  grid-column-start: 1; 
+  grid-column-end: 3; 
+  grid-row-start: 1; 
+  grid-row-end: 4; 
+  
+}
+
+.HS-item{
+
+  color: white;
+  font-size: 7mm;
+  background-color: #93a8ac;
+  margin: 2%;
+  padding-left:10mm;
+  width: 70%;
+  border-radius: 7px;
+  text-align: left;
+  
+}
+
+
+
+.To-next-win{
+  grid-area: next;
+  margin: 5mm;
+  align-self: center;
+  
+}
+.points{
+  grid-area: points;
+  font-size: 30mm;
+  align-self: center;
+}
+.play-button{
+
+  margin: 5mm;
+  grid-area: play; 
+   
+}
+
+.Banner{
+  grid-area: banner;
+}
+
+.header{
+  grid-area: header;
+  margin: 0 0 10mm 0;
+  padding: 5mm;
+}
+
+
+.Score{
+  float: right;
+  margin-right: 5mm;
+}
+
