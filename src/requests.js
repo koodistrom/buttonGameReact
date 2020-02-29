@@ -11,9 +11,6 @@ import axios from 'axios';
       url: 'https://jm-button-game-server.herokuapp.com/hs',
       withCredentials: true,
       })
-      .then(response => {
-        return response.json();
-      })
       .then(hsInfoJson => {
         return hsInfoJson;
       });
