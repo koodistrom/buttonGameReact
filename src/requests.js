@@ -12,7 +12,7 @@ import axios from 'axios';
       withCredentials: true,
       })
       .then(hsInfoJson => {
-        return hsInfoJson;
+        return hsInfoJson.data;
       });
 
     return result;
@@ -63,7 +63,7 @@ export async function fetchSessionInfo() {
       withCredentials: true
     })
       .then(playerInfoJson => {
-        return playerInfoJson;
+        return playerInfoJson.data;
       });
     return result;
   }
@@ -81,7 +81,7 @@ export async function fetchPlay() {
 
     })
       .then(playerInfoJson => {
-        return playerInfoJson;
+        return playerInfoJson.data;
       });
 
     return result;
