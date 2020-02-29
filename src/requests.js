@@ -1,3 +1,4 @@
+import axios from 'axios';
  // TODO: error handling
  /**
   * Is called before highscore view. Fetches top 10 highscore information from back end
@@ -5,11 +6,11 @@
   * @returns array of objects with point, name, and id information 
   */
  export async function  fetchHs() {
-    const result = await fetch("https://jm-button-game-server.herokuapp.com/hs", {
-      method: "get",
+    const result = await   axios({
+      method: 'get',
+      url: 'https://jm-button-game-server.herokuapp.com/hs',
       withCredentials: true,
-      credentials: "include"
-    })
+      })
       .then(response => {
         return response.json();
       })
@@ -19,6 +20,7 @@
 
     return result;
   }
+
 
 /**
  * Sends username to back end. Called when start button is pressed.
@@ -46,6 +48,8 @@ export async function fetchSetName(name) {
       });
     return result;
   }
+
+
 
 /**
  * Fetches current situation of the game session. If session isn't
