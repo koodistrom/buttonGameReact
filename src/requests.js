@@ -5,7 +5,7 @@
   * @returns array of objects with point, name, and id information 
   */
  export async function  fetchHs() {
-    const result = await fetch("http://localhost:8080/hs", {
+    const result = await fetch("https://jm-button-game-server.herokuapp.com/hs", {
       method: "get",
       withCredentials: true,
       credentials: "include"
@@ -28,7 +28,7 @@
  */
 export async function fetchSetName(name) {
 
-    const result = await fetch("http://localhost:8080/name", {
+    const result = await fetch("https://jm-button-game-server.herokuapp.com/name", {
       method: "post",
       withCredentials: true,
       credentials: "include",
@@ -57,7 +57,7 @@ export async function fetchSetName(name) {
  */
 export async function fetchSessionInfo() {
 
-    let result = await fetch("http://localhost:8080/current-session", {
+    let result = await fetch("https://jm-button-game-server.herokuapp.com/current-session", {
       method: "get",
       withCredentials: true,
       credentials: "include"
@@ -78,7 +78,7 @@ export async function fetchSessionInfo() {
  *  name, points, win, and the clicks to next winning state
  */
 export async function fetchPlay() {
-    let result = await fetch("http://localhost:8080/play", {
+    let result = await fetch("https://jm-button-game-server.herokuapp.com/play", {
       method: "post",
       withCredentials: true,
       credentials: "include"
