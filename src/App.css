@@ -140,3 +140,17 @@
   margin-right: 5mm;
 }
 
+.gif-wrapper{
+  padding-top:56.250%;
+  position:relative;
+  margin: 5mm;
+  
+}
+.gif{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  
+}

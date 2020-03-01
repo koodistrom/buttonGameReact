@@ -20,8 +20,8 @@ class Banner extends React.Component {
 
   constructor(props) {
     super(props);
-    this.imgs = [<iframe src="https://gifer.com/embed/2AC" width="480" height="268.800" frameBorder="0" title="coder" allowFullScreen></iframe>,
-       <iframe src="https://gifer.com/embed/1FA" width="480" height="270.000" frameBorder="0"  title="hacker" allowFullScreen></iframe>];
+    this.imgs = [<iframe src="https://gifer.com/embed/1FA" className ="gif" frameBorder="0"   title="coder" allowFullScreen></iframe>,
+    <iframe src="https://gifer.com/embed/2AC" className ="gif" frameBorder="0"   title="hacer" allowFullScreen></iframe>];
 
     this.texts = ["Skilled developers in your area!", "Click here for coders!"];
     this.state = {img: this.imgs[0], text: this.texts[0]}
@@ -53,7 +53,9 @@ class Banner extends React.Component {
  */
 render() {
     return <div id="soft-down" className="Banner">
-      {this.state.img}
+      <div className="gif-wrapper">
+        {this.state.img}
+      </div>
       <a href="http://home.tamk.fi/~c8jamant/">{this.state.text}</a>
       
       </div>;

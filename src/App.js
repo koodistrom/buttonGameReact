@@ -27,15 +27,13 @@ class App extends React.Component {
   }
 
   /**
-   * Is called when App component is mounted. Checks if there is gamesession with this sessions id and
+   * Is called when App component is mounted. Checks if there is game id stored already and
    * starts new game or returns to old accordingly.  
    *
    * @memberof App
    */
   async componentDidMount() {
-    // setter
-    //localStorage.setItem('myData', data);
-    // getter
+
     if(localStorage.getItem('id')===null){
       localStorage.setItem('id',utils.randomId() );
       console.log(localStorage.getItem('id'))
