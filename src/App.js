@@ -104,7 +104,7 @@ startView(){
 
           </form>
           <button id="soft-up" className="play-button" onClick={() => this.startNewGame()}>
-            {this.state.name === undefined? "START" : "RESTART"}
+            START
           </button>
         </div>
       );
