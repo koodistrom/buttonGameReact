@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "./Banner";
 import * as requests from "./requests";
 import "./App.css";
+import * as utils from "./utils"
 
 // TODO: error handling
 
@@ -32,6 +33,14 @@ class App extends React.Component {
    * @memberof App
    */
   async componentDidMount() {
+    // setter
+    //localStorage.setItem('myData', data);
+    // getter
+    if(localStorage.getItem('id')===null){
+      localStorage.setItem('id',utils.randomId() );
+      console.log(localStorage.getItem('id'))
+    }
+
     let gameInfo = await requests.fetchSessionInfo();
     this.setState(gameInfo);
     this.state.name !== null && this.state.points !== 0 ? this.changeToGameView() : this.changeToStartView()

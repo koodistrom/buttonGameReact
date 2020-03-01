@@ -6,7 +6,7 @@ import axios from 'axios';
   * @returns array of objects with point, name, and id information 
   */
  export async function  fetchHs() {
-    const result = await   axios({
+    const result = await axios({
       method: 'get',
       url: 'https://jm-button-game-server.herokuapp.com/hs',
       withCredentials: true,
@@ -27,21 +27,14 @@ import axios from 'axios';
  */
 export async function fetchSetName(name) {
 
-    const result = await fetch("https://jm-button-game-server.herokuapp.com/name", {
+    const result = await axios("https://jm-button-game-server.herokuapp.com/name", {
       method: "post",
       withCredentials: true,
-      credentials: "include",
-      headers: {
-        'Content-Type': 'application/json'
-      }
-      , body: JSON.stringify({ name })
+      data:  {name: name, id: localStorage.getItem('id')}
     })
-      .then(response => {
-        return response.json();
-      })
       .then(playerInfoJson => {
 
-        return playerInfoJson;
+        return playerInfoJson.data;
       });
     return result;
   }
@@ -59,8 +52,9 @@ export async function fetchSetName(name) {
 export async function fetchSessionInfo() {
 
     let result = await axios("https://jm-button-game-server.herokuapp.com/current-session", {
-      method: "get",
-      withCredentials: true
+      method: "post",
+      withCredentials: true,
+      data:  {id: localStorage.getItem('id')}
     })
       .then(playerInfoJson => {
         return playerInfoJson.data;
@@ -78,7 +72,7 @@ export async function fetchPlay() {
     let result = await axios("https://jm-button-game-server.herokuapp.com/play", {
       method: "post",
       withCredentials: true,
-
+      data:  {id: localStorage.getItem('id')}
     })
       .then(playerInfoJson => {
         return playerInfoJson.data;
